@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f0f2f5;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px 10px;
+}
+
+.caja {
+  background: white;
+  max-width: 700px;
+  width: 100%;
+  padding: 25px 30px;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgb(0 0 0 / 0.1);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  color: #004085;
+  font-weight: 700;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #222;
+}
+
+select, .res {
+  width: 70%;
+  padding: 9px 12px;
+  margin-bottom: 10px;
+  border: 1.5px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+.boton-enviar {
+  background-color: #007bff;
+  color: white;
+  width: 70%;
+  margin-top: 20px;
+}
+
+.boton-enviar:hover {
+  background-color: #0056b3;
+}
+
+.boton-volver {
+  background-color: #6c757d;
+  color: white;
+  width: 70%;
+  margin-top: 20px;
+}
+
+.boton-volver:hover {
+  background-color: #565e64;
+}
+
+.error {
+  text-align: center;
+  color: #dc3545;
+  margin-top: 15px;
+  font-weight: 700;
+}
+
+.mensaje {
+  text-align: center;
+  color: #008000;
+  margin-top: 15px;
+  font-weight: 700;
+}
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.primer-fila th {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.cuerpo td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 0.95rem;
+}

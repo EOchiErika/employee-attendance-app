@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Salida</title>
+    <link rel="stylesheet" href="/static/css/estilos.css">
+</head>
+<body>
+    <div class="caja">
+        <h1>Registrar Salida</h1>
+        
+        {% if registrar %}
+            <p class="mensaje">Registraste entrada en la dependencia: <strong>{{ dependencia }}</strong></p>
+            <form method="POST">
+                <input type="hidden" name="legajo" value="{{ legajo }}">
+                <input type="hidden" name="dni" value="{{ dni }}">
+                <button class="boton-enviar" type="submit" name="confirmar" value="1">Confirmar Salida</button>
+            </form>
+        {% else %}
+            <form method="POST">
+                <label for="legajo">Número de legajo:</label>
+                <input type="text" name="legajo" required class="res"><br><br>
+
+                <label for="dni">Últimos 4 dígitos del DNI:</label>
+                <input type="text" name="dni" maxlength="4" required class="res"><br><br>
+
+                <button class="boton-enviar" type="submit" name="registrar" value="1">Registrar Salida</button>
+                {% if mensaje %}
+                <p class="mensaje">{{ mensaje }}</p>
+                {% elif error %}
+                <p class="error">{{ error }}</p>
+                {% endif %}
+            </form>
+        {% endif %}
+
+        <a href="/inicio.html"><button class="boton-volver">Volver al inicio</button></a>
+    </div>
+</body>
+</html>

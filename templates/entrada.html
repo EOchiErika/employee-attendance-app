@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Entrada</title>
+    <link rel="stylesheet" href="/static/css/estilos.css">
+
+</head>
+<body>
+    <div class="caja">
+      <h1>Registrar Entrada</h1>
+      <form method="POST">
+        <label for="legajo">Legajo:</label>
+        <input type="text" name="legajo" required class="res"><br><br>
+
+        <label for="dni">Últimos 4 dígitos del DNI:</label>
+        <input type="text" name="dni" required class="res"><br><br>
+
+        <label for="dependencia">Dependencia:</label>
+        <select name="dependencia" required>
+            <option value="Seleccionar">Seleccionar...</option>
+            <option value="D01">Edificio Central</option>
+            <option value="D02">Talleres</option>
+            <option value="D03">Centro Deportivo</option>
+        </select><br><br>
+
+        <button class="boton-enviar" type="submit">Registrar Entrada</button>
+          {% if error %}
+            <p class="error">{{ error }}</p>
+          {% endif %}
+          {% if mensaje %}
+            <p class="mensaje">{{ mensaje }}</p>
+          {% endif %}
+    </form>
+       <a href="inicio.html"><button class="boton-volver">Volver al inicio</button></a>
+    </div>
+
+</body>
+</html>

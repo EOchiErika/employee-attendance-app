@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados de la Consulta</title>
+    <link rel="stylesheet" href="/static/css/estilos.css">
+</head>
+<body>
+    <div class="caja">
+        <h1>Registros</h1>
+
+    {% if registros %}
+        <table class="tabla">
+            <thead class="primer-fila">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora de Entrada</th>
+                    <th>Hora de Salida</th>
+                    <th>Dependencia</th>
+                </tr>
+            </thead>
+            <tbody class="cuerpo">
+                {% for reg in registros %}
+                    <tr>
+                        <td>{{ reg.fecha }}</td>
+                        <td>{{ reg.horaentrada.strftime('%H:%M') or "--" }}</td>
+                        <td>{{ reg.horasalida.strftime('%H:%M') or "--" }}</td>
+                        <td>{{ reg.dependencia }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="error">No se encontraron registros para el período seleccionado.</p>
+    {% endif %}
+
+       <a href="consulta.html"><button class="boton-volver">Volver a consultar</button></a>
+       <a href="inicio.html"><button class="boton-volver">Volver al inicio</button></a>
+
+    </div>
+</body>
+</html>

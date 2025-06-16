@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultar Registros</title>
+    <link rel="stylesheet" href="/static/css/estilos.css">
+
+</head>
+<body>
+    <div class="caja">
+        <h1>Consultar Registros</h1>
+    <form method="post">
+        <label for="legajo">Número de legajo:</label>
+        <input type="text" name="legajo" required class="res"><br><br>
+
+        <label for="dni">Últimos 4 dígitos del DNI:</label>
+        <input type="text" name="dni" maxlength="4" required class="res"><br><br>
+
+        <label for="fecha_inicio">Fecha de inicio:</label>
+        <input type="date" name="fecha_inicio" required class="res"><br><br>
+
+        <label for="fecha_fin">Fecha de fin:</label>
+        <input type="date" name="fecha_fin" required class="res"><br><br>
+
+        <button class="boton-enviar" type="submit">Consultar</button>
+
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+    </form>
+       <a href="inicio.html"><button class="boton-volver">Volver al inicio</button></a>
+    </div>
+</body>
+</html>
